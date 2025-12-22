@@ -64,6 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["new_content"], $_POST
 
 // Get all uploaded files
 $uploadedFiles = getUploadedFiles($uploadsDir);
+/////a///////////////////////////////////
 ?>
 
 <!DOCTYPE html>
