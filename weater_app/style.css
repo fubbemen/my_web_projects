@@ -25,6 +25,15 @@ input {
     corner-shape: scoop;
     font-family: 'Cherry Bomb One';
 }
+datalist{
+    background-color: rgb(143, 143, 197);
+    border-radius: 15px;
+    font-size: 1cm;
+    margin: 20px 0;
+    corner-shape: scoop;
+
+    width: 90%;
+}
 
 /* ===== PLACEHOLDER ===== */
 ::placeholder {

@@ -25,8 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" ){
         $weather_montu["tomorrow"] = "sunny";
         $weather_montu["day_after_tomorrow"] = "sunny";
     }
-    $tomorow = "";
-    $day_after_tmrw = "";
+
     if ($today == "monday"){
         $tomorow = "tuesday";
         $day_after_tmrw = "wednesday";
@@ -49,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" ){
         $tomorow = "monday";
         $day_after_tmrw = "tuesday";
     }else {
-        echo"<p>sorry please enter a valid day</p>";
+        echo"<p>sorry please enter a valid day</p>"
     }
 }
 ?>
@@ -60,7 +59,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" ){
     <title>Weather Forecast</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Cherry Bomb One" rel="stylesheet">
-    <link rel="shortcut icon" type="image/x-icon" href="img.png" />
 </head>
 
 <body>
@@ -69,16 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" ){
 
         <form method="POST">
             <div class="weather-row">
-                <input type="text" name="day" list="day" placeholder="please enter the current day">
-                     <datalist id="day">
-                    <option value="monday"></option>
-                    <option value="tuesday"></option>
-                    <option value="wednesday"></option>
-                    <option value="thursday"></option>
-                    <option value="friday"></option>
-                    <option value="saturday"></option>
-                    <option value="sunday"></option>
-                </datalist> 
+                <input type="text" name="day" placeholder="please enter the current day">
             </div>
 
             <div class="weather-row">
@@ -92,10 +81,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" ){
 
         <?php
         if (!empty($weather_montu['tomorrow']) && !empty($weather_montu['day_after_tomorrow'])) {
-            if ($today == "monday" or $today == "tuesday" or $today == "wednesday" or $today == "thursday" or $today == "friday" or $today == "saturday" or $today == "sunday"){
             echo "<p>Weather for $tomorow is {$weather_montu['tomorrow']} in $city</p>";
             echo "<p>Weather for $day_after_tmrw is {$weather_montu['day_after_tomorrow']} in $city</p>";
-            }
         }
         ?>
     </div>

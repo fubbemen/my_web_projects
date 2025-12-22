@@ -1,0 +1,60 @@
+body {
+    background-color: #6fa8dc;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    font-family: 'Cherry Bomb One';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.comments {
+    background-color: #f0e68c; /* distinct from steelblue */
+    border-radius: 20px;
+    width: 500px;
+    padding: 25px;
+    margin: 20px auto;
+    text-align: center;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    font-family: 'Arial', sans-serif;
+}
+
+.comments p {
+    color: #333; /* readable text */
+    font-size: 1.1cm;
+    margin: 10px 0;
+}
+
+.comments button {
+    background-color: #ff8c00;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 10px 25px;
+    cursor: pointer;
+    font-size: 1cm;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.comments button:hover {
+    background-color: #ffa500; /* subtle hover effect */
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 650px) {
+    .comments {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .comments p {
+        font-size: 1.5cm;
+    }
+
+    .comments button {
+        font-size: 1.3cm;
+    }
+}

@@ -6,7 +6,7 @@ If you need to contact tech support or file a bug, please send us this file. NOT
 
 macOS: Version 10.16 (Build 21H1222)
 CPU type: Intel(R) Core(TM) i5-3210M CPU @ 2.50GHz CPU speed (mhz): 2500 Bus speed (mhz): 100 RAM (MB): 10240
- sebbbe var häe
+cbcbc
 X-System folder:'', case sensitive=0
 
 0:00:00.000 D/TRN: Unable to determine default language. May need to prompt the user to select.
