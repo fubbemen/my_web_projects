@@ -9,11 +9,24 @@ if (!isset($_SESSION['username'])) {
 
 // Show session info for debugging (can remove later)
 echo "<p>Hello, " . htmlspecialchars($_SESSION['username']) . "!</p>";
-// var_dump($_SESSION);
 
 $uploadsDir = "uploads/";
 if (!is_dir($uploadsDir)) {
     mkdir($uploadsDir, 0777, true);
+}
+
+// Function to get all uploaded files
+function getUploadedFiles($dir) {
+    $files = [];
+    if (is_dir($dir)) {
+        $items = scandir($dir);
+        foreach ($items as $item) {
+            if ($item != '.' && $item != '..' && is_file($dir . $item)) {
+                $files[] = $item;
+            }
+        }
+    }
+    return $files;
 }
 
 // STEP 1: Handle file upload
@@ -48,6 +61,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["new_content"], $_POST
         echo "<p style='color:red;'>Failed to save file!</p>";
     }
 }
+
+// Get all uploaded files
+$uploadedFiles = getUploadedFiles($uploadsDir);
 ?>
 
 <!DOCTYPE html>
@@ -61,12 +77,50 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["new_content"], $_POST
 
 <h1>Dashboard</h1>
 
+<!-- List uploaded files -->
+<h2>Uploaded Files</h2>
+<?php if (count($uploadedFiles) > 0): ?>
+    <ul>
+    <?php foreach ($uploadedFiles as $file): ?>
+        <li>
+            <a href="uploads/<?php echo htmlspecialchars($file); ?>" target="_blank">
+                <?php echo htmlspecialchars($file); ?>
+            </a>
+            | 
+            <a href="?edit=<?php echo urlencode($file); ?>">Edit</a>
+        </li>
+    <?php endforeach; ?>
+    </ul>
+<?php else: ?>
+    <p>No files uploaded yet.</p>
+<?php endif; ?>
+
+<hr>
+
 <!-- Upload form -->
 <h2>Upload a new text file</h2>
 <form method="POST" enctype="multipart/form-data">
     <input type="file" name="file" accept=".txt" required>
     <button type="submit">Upload</button>
 </form>
+
+<!-- Handle file editing if requested -->
+<?php
+if (isset($_GET['edit'])) {
+    $fileToEdit = $_GET['edit'];
+    $filePath = $uploadsDir . basename($fileToEdit);
+    
+    if (file_exists($filePath)) {
+        $content = file_get_contents($filePath);
+        echo '<h2>Editing: ' . htmlspecialchars($fileToEdit) . '</h2>';
+        echo '<form method="POST">';
+        echo '<textarea name="new_content" rows="15" cols="70">' . htmlspecialchars($content) . '</textarea><br>';
+        echo '<input type="hidden" name="file_path" value="' . htmlspecialchars($filePath) . '">';
+        echo '<button type="submit">Save Changes</button>';
+        echo '</form>';
+    }
+}
+?>
 
 <!-- Logout button -->
 <form method="POST" action="index.php" style="margin-top:20px;">
