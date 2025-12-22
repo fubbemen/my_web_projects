@@ -48,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" ){
         $tomorow = "monday";
         $day_after_tmrw = "tuesday";
     }else {
-        echo"<p>sorry please enter a valid day</p>"
+        echo"<p>sorry please enter a valid day</p>";
     }
 }
 ?>
