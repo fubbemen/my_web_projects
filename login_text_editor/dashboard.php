@@ -53,6 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["new_content"], $_POST
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="shortcut icon" type="image/x-icon" href="php.png" />
     <title>Dashboard</title>
     <link rel="stylesheet" href="style1.css">
 </head>

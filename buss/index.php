@@ -4,6 +4,7 @@
     <title>Buss</title>
     <link rel="stylesheet" href="style.css">
      <link href="https://fonts.googleapis.com/css?family=Cherry Bomb One" rel="stylesheet">
+     <link rel="shortcut icon" type="image/x-icon" href="logo.png" />
 </head>
 <body>
     <form action="" method="POST">
