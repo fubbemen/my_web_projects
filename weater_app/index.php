@@ -1,30 +1,29 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] === "POST" ){
-    //get location in long,lat;
+    
     $city = $_POST["city"];
-    $city = trim($city);  // Changed from str_replace to trim
+    $city = str_replace(" "," ",$city);  
     $geo_url = "https://geocoding-api.open-meteo.com/v1/search?name=" . urlencode($city) . "&count=1";  // Added urlencode
     $geo_response = file_get_contents( $geo_url );
     $geo_data = json_decode( $geo_response, true );
 
     if ($city != ""){
         if (isset($geo_data['results'][0])) {
-            // City exists - proceed with getting coordinates
             $lat = $geo_data["results"][0]["latitude"];
             $long = $geo_data["results"][0]["longitude"];
             
-            // 1. The URL (London coordinates)
+            
             $url = "https://api.open-meteo.com/v1/forecast?latitude=$lat&longitude=$long&current=temperature_2m,weather_code";
 
-            // 2. Get the JSON data
+            
             $response = file_get_contents($url);
 
-            // 3. Convert JSON to a PHP Array
+            
             $data = json_decode($response, true);
 
-            // 4. Access the "current" weather section
+            
             $temp = $data['current']['temperature_2m'];
-            $code = $data['current']['weather_code']; // This tells us if it's sunny, rainy, etc.
+            $code = $data['current']['weather_code'];
             $weather = "";
             if ($code == 0) {
                $weather = "klar himmel";
@@ -45,9 +44,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" ){
             
             $cityFound = true;
         } else {
-            if ($city != ""){  // Fixed: changed 'city' to '$city'
-            // City not found - show error message
-            echo "<p>City not found. Please check the spelling.</p>";
+            if ($city != ""){  
+            echo "<p>staden hittades ej</p>";
             $cityFound = false;
               }
         }
@@ -71,11 +69,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" ){
 
         <form method="POST">
             <div class="weather-row">
-                <input type="text" name="city" placeholder="please enter the city you are in">
+                <input type="text" name="city" placeholder="skriv in staden du will veta vädret i">
             </div>
 
             <div class="weather-row">
-                <button type="submit">Submit</button>
+                <button type="submit">sicka in för granskning av väder i valda staden</button>
             </div>
         </form>
 

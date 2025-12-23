@@ -46,11 +46,11 @@ datalist{
 button {
     color: blueviolet;
     background-color: chocolate;
-    font-size: 35px;
+    font-size: 25px;
     margin: 20px 0;
     padding: 15px 30px;
     cursor: pointer;
-    width: 200px;
+    width: 250px;
     border-radius: 100px;
     font-family: 'Cherry Bomb One';
     corner-shape: squircle;
