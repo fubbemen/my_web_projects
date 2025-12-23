@@ -19,8 +19,9 @@ input {
     background-color: rgb(143, 143, 197);
     border-radius: 15px;
     text-align: center;
-    margin: 20px 0;
-    width: 750px;
+    margin: 10px 0;
+    width: 100%;
+    max-width: 600px;
     corner-shape: scoop;
     font-family: 'Cherry Bomb One';
     font-size: 30px;
@@ -28,14 +29,6 @@ input {
     line-height: normal;
     padding: 0 15px;
     box-sizing: border-box;
-    max-width: 100%;
-}
-
-/* ===== PLACEHOLDER ===== */
-::placeholder {
-    color: black;
-    font-size: 4px;
-    text-align: center;
 }
 
 /* ===== PLACEHOLDER ===== */
@@ -43,6 +36,15 @@ input {
     color: black;
     font-size: 30px;
     text-align: center;
+}
+datalist{
+    background-color: rgb(143, 143, 197);
+    border-radius: 15px;
+    font-size: 1cm;
+    margin: 20px 0;
+    corner-shape: scoop;
+
+    width: 90%;
 }
 
 /* ===== BUTTON ===== */
@@ -74,10 +76,10 @@ p {
     padding: 30px;
     margin: 3px auto;
     width: auto;
+    max-width: 700px;
     background-color: steelblue;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     corner-shape: bevel;
-    max-width: 100%;
     box-sizing: border-box;
 }
 
@@ -85,23 +87,14 @@ p {
 .weather-row {
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    gap: 5px;
     align-items: center;
     flex-wrap: wrap;
+    width: 100%;
 }
 
 /* ===== RESPONSIVE ===== */
-@media (max-width: 650px) {
-    .weather-box {
-        width: 90%;
-        padding: 20px;
-    }
-
-    p {
-        font-size: 2cm;
-    }
-}
-
-/* ===== ADDITIONAL RESPONSIVE RULES ===== */
 @media (max-width: 900px) {
     input {
         width: 90%;
@@ -119,6 +112,11 @@ p {
         padding: 15px;
     }
     
+    .weather-box {
+        max-width: 90%;
+        padding: 20px;
+    }
+    
     .weather-title {
         font-size: 26px;
     }
@@ -126,6 +124,7 @@ p {
     input {
         font-size: 22px;
         height: 45px;
+        max-width: 90%;
     }
     
     ::placeholder {
@@ -143,6 +142,22 @@ p {
     }
 }
 
+@media (max-width: 650px) {
+    .weather-box {
+        width: 95%;
+        padding: 15px;
+    }
+    
+    p {
+        font-size: 0.7cm;
+    }
+    
+    input {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
 @media (max-width: 480px) {
     body {
         font-size: 16px;
@@ -157,8 +172,9 @@ p {
     input {
         font-size: 18px;
         height: 40px;
-        margin: 15px 0;
+        margin: 8px 0;
         padding: 0 10px;
+        width: 100%;
     }
     
     ::placeholder {
@@ -194,6 +210,7 @@ p {
     
     input {
         font-size: 16px;
+        height: 35px;
     }
     
     ::placeholder {
@@ -203,6 +220,7 @@ p {
     button {
         font-size: 14px;
         width: 140px;
+        padding: 8px 16px;
     }
     
     p {
