@@ -1,5 +1,0 @@
-[
-    {"id": 1, "name": "Team Alpha", "players": [], "rating": 0, "wins": 0, "losses": 0},
-    {"id": 2, "name": "Team Beta", "players": [], "rating": 0, "losses": 0, "wins": 0},
-    {"id": 3, "name": "Team Gamma", "players": [], "rating": 0, "losses": 0, "wins": 0}
-]

@@ -23,6 +23,8 @@
             echo"<div class = 'box'>";
    echo "<div class='box'>"; // starta box före loopen
             $i = 0;
+            $j = $age +75;
+            for ($i = 1; $i <= $j; $i++){
     while ($age != $i){
         $i = $i + 1;
         if ($age == $i){
@@ -35,6 +37,7 @@
     echo "</div>"; // stäng box efter loopen
         
     }
+}
         ?>
         </body>
 </head>
