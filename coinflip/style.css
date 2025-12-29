@@ -1,0 +1,69 @@
+body{
+        background-color: #6fa8dc;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    font-family: 'Cherry Bomb One';
+    font-size: 22px;
+}
+label{
+      color: black;
+    font-size: 30px;
+    margin: 20px 0;
+}
+::placeholder {
+    color: black;
+    font-size: 30px;
+    text-align: center;
+}
+p {
+    color: yellow;
+    font-size: 1cm;
+    margin: 15px 0;
+}
+.inputs{
+    background-color: rgb(143, 143, 197);
+    border-radius: 15px;
+    font-size: 1cm;
+    margin: 20px 0;
+    width: 90%;
+    corner-shape: scoop;
+    font-family: 'Cherry Bomb One';
+    text-align: center;
+}
+
+.box {
+    border: ridge 10px blueviolet;
+    border-radius: 30px;
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 700px;
+    background-color: steelblue;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    corner-shape: bevel;
+    box-sizing: border-box;
+}
+
+button{
+     color: blueviolet;
+    background-color: chocolate;
+    font-size: 20px;
+    margin: 20px 0;
+    padding: 15px 30px;
+    cursor: pointer;
+    width: 200px;
+    border-radius: 100px;
+    font-family: 'Cherry Bomb One';
+    corner-shape: squircle;
+    max-width: 100%;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 30px;
+    display: block;
+    margin: 20px auto;
+    corner-shape: scoop;
+    object-fit: contain;
+}
+
