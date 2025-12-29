@@ -10,7 +10,7 @@
         <h1 class="age-title">Hi this is the age indicator</h1>
         <form method="POST">
             <div class="form-row">
-                <input type="text" name="age_input" placeholder="please enter your age">
+                <input type="text" name="age_input" class="input__search" placeholder="What is your age?">
             </div>
             <div class="form-row">
                 <button type="submit">Submit</button>
