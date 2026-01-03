@@ -93,6 +93,16 @@ p {
     flex-wrap: wrap;
     width: 100%;
 }
+.inputs{
+    background-color: rgb(143, 143, 197);
+    border-radius: 15px;
+    font-size: 1cm;
+    margin: 20px 0;
+    width: 90%;
+    corner-shape: scoop;
+    font-family: 'Cherry Bomb One';
+    text-align: center;
+}
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
