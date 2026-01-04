@@ -1,0 +1,133 @@
+/* --- Global Styles --- */
+body {
+    background-color: #6fa8dc;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    font-family: 'Cherry Bomb One';
+    font-size: 22px;
+}
+
+/* --- Layout Container --- */
+.container {
+    display: flex;
+    justify-content: center; 
+    gap: 20px;              
+    flex-wrap: wrap; /* Important: allows items to wrap to a new line */
+}
+
+/* --- Shared Box Styles --- */
+.box, .r-box, .text {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    
+    border: ridge 10px blueviolet;
+    border-radius: 30px;
+    padding: 30px;
+    background-color: steelblue;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    
+    /* Native Shape */
+    corner-shape: bevel; 
+}
+
+.box {
+    width: 450px;
+    margin: 10px;
+}
+
+.r-box {
+    width: auto;
+    margin: 10px;
+}
+
+/* --- THE FIX: The Text Box (Always Underneath) --- */
+.text {
+/* This forces the box to take up the full width of the container */
+    /* making it impossible for it to sit next to the others */
+    flex: 1 1 100%; 
+    
+    /* This centers the box itself horizontally */
+    margin: 20px auto; 
+    
+    /* This controls the actual size of the box on the screen */
+    max-width: 600px; 
+    min-height: 100px;
+    width: 100%;
+
+    /* Standard Box Styles */
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    border: ridge 10px blueviolet;
+    border-radius: 30px;
+    padding: 30px;
+    background-color: steelblue;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    corner-shape: bevel;
+}
+
+/* --- The Inputs --- */
+input {
+    background-color: rgb(143, 143, 197);
+    border-radius: 15px;
+    text-align: center;
+    margin: 10px 0;
+    width: 400px;
+    max-width: 100%;
+    font-family: 'Cherry Bomb One';
+    font-size: 20px;
+    height: 50px;
+    padding: 0 15px;
+    box-sizing: border-box;
+    border: none;
+    color: black;
+
+    /* Native Shape */
+    corner-shape: scoop;
+}
+
+/* --- Button --- */
+button {
+    margin-top: 10px;
+    height: 120px;
+    width: 280px;
+    color: blueviolet;
+    background-color: chocolate;
+    font-size: 24px;
+    padding: 15px 30px;
+    cursor: pointer;
+    border-radius: 60px;
+    font-family: 'Cherry Bomb One';
+    border: none;
+
+    /* Native Shape */
+    corner-shape: squircle;
+}
+
+/* --- Typography & Placeholders --- */
+p {
+    color: yellow;
+    font-size: 32px;
+    margin: 15px 0;
+}
+
+::placeholder {
+    color: black;
+    font-size: 20px;
+    text-align: center;
+    opacity: 0.7;
+}
+
+/* Ensures password wrapper doesn't break alignment */
+.box div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}

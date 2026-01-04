@@ -240,9 +240,9 @@ if ($lang != "")
 {
     echo "<select name = 'lang' id = 'lang'>
     </select>";
-    echo"<p>oj då $lang finns ej i vår språkdatabas en kontakta gärna support om detta för att få detta språk att funka!</p>";
+    echo"<p>oj då $lang finns ej i vår språkdatabas än, kontakta gärna support om detta för att få detta språk att funka! (funkar ej mellan 00:00 till 23:59:55)</p>";
     echo"<p>mail: skitpådig@ingenbryrsig.se</p>";
-    echo "<p>telefon: 070 123 565 657 234(12)</p>";
+    echo "<p>telefon: 070 6589 413 254 456 (funkar ej mellan 00:00 till 23:59:55)</p>";
     echo "<p>brev: skitpådigvägen 67</p>";
 } else
 {
